@@ -5,7 +5,13 @@ defmodule Wifi.Scanner.Iwlist do
   """
 
   @spec utility() :: binary
-  def utility, do: "/usr/sbin/iwlist"
+  def utility do
+    if File.exists?("/usr/sbin/iwlist") do
+      "/usr/sbin/iwlist"
+    else
+      "/sbin/iwlist"
+    end
+  end
 
   @spec scan() :: [%Wifi.BaseStation{}]
   def scan do

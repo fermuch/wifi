@@ -29,8 +29,8 @@ defmodule Wifi.Mixfile do
   end
 
   defp deps do
-    [{:httpoison, "~> 0.6"},
-     {:poison, "~> 1.4.0"}]
+    [{:httpoison, "~> 1.5"},
+     {:poison, "~> 3.1"}]
   end
 
   defp package do
